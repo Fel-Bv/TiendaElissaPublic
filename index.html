@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title> Tienda. </title>
+
+    <!-- Icono Pagina -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="static/img/icono/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/img/icono/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/img/icono/favicon-16x16.png">
+    <link rel="manifest" href="static/img/icono/site.webmanifest"> -->
+
+    <!-- Hoja de estilos CSS  -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/capa-formulario.css">
+    
+    <script src="static/js/cookies.js"></script>
+    <script src="static/js/index.js" defer></script>
+    <script src="static/js/carrito.js" defer></script>
+    <script src="static/js/formulario.js" defer></script>
+</head>
+
+<body>
+    <section id="contenedor-capa-formulario" class="invisible">
+        <div class="capa-formulario">
+            <div class="contenedor-formulario">
+                <div class="saltar-formulario">
+                    <p id="saltar-formulario">Saltar</p>
+                </div>
+                <div class="formulario">
+                    <div class="descripcion-formulario">
+                        <h2>Bienvenido</h2>
+                        <p>
+                            Antes de continuar, nos gustaría saber tus preferencias sobre nuestros
+                            productos para ofrecer lo mejor para tí.
+                        </p>
+                    </div>
+                    <form id="formulario-preferencias">
+                        <div class="pregunta">
+                            <label for="tipo-calzado">¿Te gusta más el tipo bota o el tipo choclo?</label>
+                            <select id="tipo-calzado" required>
+                                <option value="bota">Bota</option>
+                                <option value="choclo">Choclo</option>
+                            </select>
+                        </div>
+                        <div class="pregunta">
+                            <label for="marcas">¿Cuales son tus marcas preferidas?</label>
+                            <div class="seleccionar-varios">
+                                <div>
+                                    <input type="checkbox" id="marca-nike">
+                                    <label for="marca-nike">Nike</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="marca-adidas">
+                                    <label for="marca-adidas">Adidas</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="marca-converse">
+                                    <label for="marca-converse">Converse</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="marca-vans">
+                                    <label for="marca-vans">Vans</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pregunta">
+                            <label for="precio">¿Qué rango de precio estás buscando?</label>
+                            <select id="precio" required>
+                                <option value="1">$1,000 - $2,000</option>
+                                <option value="2">$2,000 - $3,000</option>
+                                <option value="3">$3,000 - $4,000</option>
+                                <option value="4">$4,000 - $5,000</option>
+                                <option value="5">> $5,000</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" id="enviar-formulario">Siguiente</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <header>
+        <h1 id="Inicio"> Tienda </h1>
+        <a id="preferencias"> Preferencias </a>
+        <a class="login" href="login.html"> Login </a>
+
+        <div class="container-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-cart">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+              <div class="count-products">
+                <span id="contador-productos">0</span>
+              </div>
+              <div class="container-cart-products hidden-cart">
+                <!--<div class="cart-product">
+                    <div class="info-cart-product">
+                        <span class="cantidad-producto-carrito">1</span>
+                        <p class="titulo-producto-carrito">Tenis Converse</p>
+                        <span class="precio-producto-carrito">1,200$</span>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                </div>-->
+
+                <div class="cart-total invisible">
+                    <h3> Total: </h3>
+                    <span id="total-pagar">$0</span>
+                </div>
+              </div>
+        </div>
+    </header>
+
+    <h1 id="bienvenida"></h1>
+
+    <div class="mensaje-recomendaciones"></div>
+    <div class="container-items">
+        <!--
+        <div class="item" itemid="0">
+            <figure>
+                <img src="static/img/converse.jpg" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2> Tenis Converse </h2>
+                <p class="price"> 1,200$ </p>
+                <button onclick="añadirCarrito(0)"> Añadir al carrito. </button>
+                <a href="converse1.html"> Ver Objeto... </a>
+            </div>
+        </div>
+        <div class="item" itemid="1">
+            <figure>
+                <img src="static/img/vans.jpg" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2> Tenis Vans </h2>
+                <p class="price"> 1,400$ </p>
+                <button onclick="añadirCarrito(1)"> Añadir al carrito. </button>
+                <a href="vans1.html"> Ver Objeto... </a>
+            </div>
+        </div>
+        <div class="item" itemid="2">
+            <figure>
+                <img src="static/img/converse2.jpg" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2> Tenis Converse 2 </h2>
+                <p class="price"> 1,270$ </p>
+                <button onclick="añadirCarrito(2)"> Añadir al carrito. </button>
+                <a href="converse2.html"> Ver Objeto... </a>
+            </div>
+        </div>
+        <div class="item" itemid="3">
+            <figure>
+                <img src="static/img/vans2.jpg" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2> Tenis Vans2 </h2>
+                <p class="price"> 1,350$ </p>
+                <button onclick="añadirCarrito(3)"> Añadir al carrito. </button>
+                <a href="vans2.html"> Ver Objeto... </a>
+            </div>
+        </div>
+        <div class="item" itemid="4">
+            <figure>
+                <img src="static/img/nike.jpg" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2> Tenis Nike </h2>
+                <p class="price"> 1,800$ </p>
+                <button onclick="añadirCarrito(4)"> Añadir al carrito. </button>
+                <a href="nike1.html"> Ver Objeto... </a>
+            </div>
+        </div>
+        <div class="item" itemid="5">
+            <figure>
+                <img src="static/img/nike2.jpg" alt="producto">
+            </figure>
+            <div class="info-product">
+                <h2> Tenis Nike2 </h2>
+                <p class="price"> 1,860$ </p>
+                <button onclick="añadirCarrito(5)"> Añadir al carrito. </button>
+                <a href="nike2.html"> Ver Objeto... </a>
+            </div>
+        </div>
+    -->
+    </div>
+</body>
+</html>

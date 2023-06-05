@@ -1,0 +1,133 @@
+@keyframes desaparecer_formulario {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: -100vh;
+    }
+}
+
+@keyframes sombrear_formulario {
+    100% {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+    }
+}
+
+#contenedor-capa-formulario {
+    background-color: #ffffffd0;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    left: 0;
+    top: 0;
+}
+#contenedor-capa-formulario.invisible {
+    visibility: hidden;
+}
+
+.capa-formulario {
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.20);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: box-shadow .5s;
+    background-color: #fff;
+    border-radius: 10px;
+    padding-bottom: 2em;
+    position: absolute;
+    margin: auto;
+    height: 50vh;
+    width: 50vw;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+.capa-formulario:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.20);
+}
+
+.contenedor-formulario {
+    overflow-y: scroll;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.saltar-formulario {
+    position: absolute;
+    padding: 1em;
+    z-index: 2;
+    right: 0;
+    top: 0;
+}
+#saltar-formulario {
+    cursor: pointer;
+}
+#saltar-formulario:hover {
+    text-decoration: underline;
+}
+
+.formulario {
+    position: absolute;
+    padding: 2em;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.formulario .descripcion-formulario {
+    margin-bottom: 1em;
+    text-align: center;
+    padding: .5em;
+}
+.formulario .descripcion-formulario h2 {
+    margin-bottom: .5em;
+}
+
+.formulario form .pregunta {
+    flex-direction: column;
+    font-size: larger;
+    padding: 1em 0;
+    display: flex;
+    height: 5em;
+    width: 100%;
+    gap: 1em;
+}
+
+.formulario form .pregunta > label {
+    font-style: normal;
+    font-weight: 700;
+}
+
+.formulario form .pregunta select {
+    border-bottom: 2px solid black !important;
+    font-size: large;
+    padding: .5em 0;
+    border: 0;
+}
+.formulario form .pregunta select::selection {
+    border: none;
+}
+
+.formulario form .pregunta .seleccionar-varios {
+    flex-direction: row;
+    font-size: large;
+    display: flex;
+    gap: 1em;
+}
+
+.formulario #enviar-formulario {
+    background-color: #000;
+    border-radius: 3px;
+    position: absolute;
+    font-size: medium;
+    cursor: pointer;
+    padding: .5em;
+    color: #fff;
+    border: none;
+    margin: 1em;
+    right: 2em;
+}
